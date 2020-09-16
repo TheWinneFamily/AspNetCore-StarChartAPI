@@ -24,8 +24,8 @@ namespace StarChart.Controllers
         [HttpGet("{id:int}",Name="GetById")]
         public IActionResult GetById( int id )
         {
-            var celestialObject = _context.Find(id);
-            if (celestialObject) {
+            var celestialObject = _context.CelestialObjects.Find(id);
+            if (celestialObject == null) {
                 return NotFound();
             }
 
